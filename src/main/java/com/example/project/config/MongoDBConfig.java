@@ -9,7 +9,6 @@ import com.mongodb.client.MongoClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
-
 @Configuration
 public class MongoDBConfig extends AbstractMongoClientConfiguration {
 
@@ -21,7 +20,7 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
     @Override
     public MongoClient mongoClient() {
         // Construct connection settings
-        String connectionString = "MongoDB-Link-Here";
+        String connectionString = key.key;
         ConnectionString connString = new ConnectionString(connectionString);
 
         // Configure server API
